@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<hr>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+     <h1 class="display-4">This is Chocs! <h1>
+     <p class="lead">Experience an amazing trip to the world of an exlusive, talior made tastes </p>
+</div>
+
+    {% if object_list %}
+
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row text-center justify-content-center">
+            {% for set in object_list %}
+              <div class="col-xs-12 col-sm-6 col-lg-3 w-100"> <a href="{{set.get_absolute_url}}"><img src="{{set.image.url}}" class="rounded" height="200" width="200"></a>
+                <h3>{{set.name}} </h3>
+                <p>{{ set.summary|truncatechars_html:90 }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+        <hr class="featurette-divider">
+
+    {% else %}
+      <p>There are no items, yet.</p>
+    {% endif %}
+{% endblock %}}

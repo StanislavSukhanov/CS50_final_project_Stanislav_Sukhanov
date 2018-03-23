@@ -1,0 +1,42 @@
+.top-navbar {
+  height: 10px;
+}
+
+.basket-container{
+  position: relative;
+  width: 400px;
+  top: 0px;
+}
+.basket-items{
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  padding: 10px;
+  background-color: #585d62e8;
+  top: 40px;
+}
+.hidden{
+  visibility: hidden;
+}
+.p-0{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #343a401c;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  height: 50px;
+  width: 50px;
+}
+
+.for-p{
+  padding: 10px;
+}
+.for-p1{
+  padding: 15px;
+}
+
+.padding{
+  padding: 4px;
+}

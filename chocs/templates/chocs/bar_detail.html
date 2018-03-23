@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+  <hr>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row text-center">
+        <h2><p>{{ bar.description }}</p></h2>
+      </div>
+    </div>
+  </div>
+  <hr>
+    <!-- Or we can use book.author.get_absolute_url as in author detail template (book) -->
+  <!-- author detail link not yet defined -->
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+          <img src="{{ bar.image.url }}", class="rounded", height="400", width="400" alt="chirkova">
+        </div>
+        <div class="col">
+          <p><strong>{{bar.size}}</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+
+{% endblock %}

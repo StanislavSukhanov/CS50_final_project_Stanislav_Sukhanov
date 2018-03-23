@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Experience an amazing trip to the world of an exlusive, talior made tastes </h1>
+
+    <hr>
+    {% if object_list %}
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row text-center justify-content-around">
+        {% for bar in object_list %}
+
+          <div class="col-xs-12 col-sm-4 col-lg-3" class="w-100">
+            <a href="{% url 'bar-detail' bar.pk %}"><img src="{{bar.image.url}}", class="rounded", height="200", width="200" alt="chirkova"></a>
+            <h4></h4>
+            <p>{{ bar.summary }}</p>
+          </div>
+
+
+      {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}
+{% endblock %}}

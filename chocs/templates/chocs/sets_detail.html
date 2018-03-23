@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<hr class="featurette-divider">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">{{ sets.name }}</h1>
+  </div>
+  <hr class="featurette-divider">
+    <!-- Or we can use book.author.get_absolute_url as in author detail template (book) -->
+  <!-- author detail link not yet defined -->
+
+  <div class="container for-p1">
+    <div class="row">
+        <div class="col" class="w-100">
+          <img src="{{ sets.image.url }}", class="rounded", height="400", width="400" alt="chirkova">
+        </div>
+        <div class="col" class="w-100">
+        <h5>Description.</h5>
+        <p>{{ sets.summary }}</p>
+        <p>Weight: <strong>{{sets.weight}} gr.</strong></p>
+        <p>Price: <strong>{{sets.price}}, {{session.session_id}} uah.</strong></p>
+
+
+        <form id ="form_bying_product" class="form-inline" action="{% url 'basket_adding' %}"> {% csrf_token %}
+          <div class="form-group">
+            <input type="number" class="form-control" name="number", id="number">
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit_btn" class="btn btn-outline-primary btn-buy"
+            data-product_id="{{ sets.id }}",
+            data-name="{{ sets.name }}"
+            data-price="{{sets.price}}">
+            Add to basket</button>
+          </div>
+        </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  <hr class="featurette-divider">
+
+{% endblock %}

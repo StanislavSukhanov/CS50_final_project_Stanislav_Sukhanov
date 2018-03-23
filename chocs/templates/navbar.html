@@ -1,0 +1,55 @@
+<header>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<a class="navbar-brand" href=" ">Chirkova</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{%url 'sets-list'%}">Chocs.   </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{%url 'bar-list'%}"> DrawBars.</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> DrawWalls.</a>
+    </li>
+    </ul>
+
+  <ul class="nav navbar-now navbar-right">
+    <li>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+      <div class="basket-container">
+        Basket <span id="basket-total-number">
+          {% if products_number_total %}
+                ({{ products_number_total }})
+          {% else %}
+                (0)
+          {% endif %}
+            </span></a>
+      <div class="basket-items hidden">
+        <ul class="">
+          {% for product_in_basket in products_in_basket %}
+          <li>{{product_in_basket.product_name}}, {{product_in_basket.number}} pcs. at Price {{product_in_basket.price_per_item}} </li>
+          {% endfor %}
+          <!-- Appends with jQuery script -->
+        </ul>
+      </div>
+    </div>
+    </button>
+
+    </li>
+
+
+
+
+  </ul>
+</div>
+</nav>
+</div>
+</header>
