@@ -31,7 +31,7 @@ SECRET_KEY = 'yrp7^%*8dk^g8v3gp4z59*y)l!d-t9^z315a$@zh*_j&$v^o@2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ide50-stanislav-sukhanov.cs50.io',]
 
 
 # Application definition

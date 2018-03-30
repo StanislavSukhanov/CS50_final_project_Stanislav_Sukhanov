@@ -11,7 +11,7 @@ class Sets(models.Model):
     name = models.CharField(max_length=40, help_text="Enter a name of an item")
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of an item")
     image = models.ImageField(blank=True, null=True, upload_to="sets_images")
-    price = models.IntegerField(default=0, max_length=5, null=True, blank=True, help_text="Entrer a price here")
+    price = models.IntegerField(default=0, null=True, blank=True, help_text="Entrer a price here")
     weight = models.CharField(max_length=4, null=True, blank=True, help_text="Enter a weight in grams here")
     candy_item = models.ManyToManyField('Candy', blank=True, help_text='Select a candy for this set')
 
@@ -102,3 +102,7 @@ class ProductInBasket(models.Model):
 
 
         super(ProductInBasket, self).save(*args, **kwargs)
+
+class Order(models.Model):
+    order_id = models.AutoField(primary_key=True,)
+
